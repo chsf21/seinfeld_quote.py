@@ -36,8 +36,7 @@ def get_quote():
         if child.name == "br":
             print()
         elif child.name == "p":
-            print()
-            print()
+            print("\n")
             print(child.get_text(separator=" ", strip="True"))
         else:
             print(child.string, end=" ")

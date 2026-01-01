@@ -33,10 +33,6 @@ def get_quote():
     # Printing quote
     print()
     for child in body.children:
-        #print(child.name)
-        #print(child)
-        #print(child.string)
-        
         if child.name == "br":
             print()
         elif child.name == "p":

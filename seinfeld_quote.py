@@ -33,13 +33,19 @@ def get_quote():
     # Printing quote
     print()
     for child in body.children:
-        if child.name == "br":
-            print()
-        elif child.name == "p":
-            print("\n")
-            print(child.get_text(separator=" ", strip="True"))
-        else:
-            print(child.string, end=" ")
+        match child.name:
+            case "br":
+                print()
+            case "p":
+                print("\n")
+                print(child.get_text(separator=" ", strip="True"))
+            case "em":
+                if not child.string.startswith("("):
+                    print("*" + child.string + "*", end="")
+            case "strong":
+                print(child.string, end="")
+            case _:
+                print(child.string, end="")
     print()
 
 # Display the first quote
